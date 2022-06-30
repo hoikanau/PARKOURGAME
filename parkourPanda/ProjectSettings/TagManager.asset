@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+<<<<<<< HEAD
+  - killGrass
+  - goodGrass
+=======
+>>>>>>> a3c8b8a93abc41435e375db77f91edc332d234fb
+  - ground
   layers:
   - Default
   - TransparentFX
