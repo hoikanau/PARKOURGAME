@@ -40,7 +40,7 @@ public class charMovement : MonoBehaviour{
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.tag == "ground"){
+        if(other.tag == "Grass" + "ground"){
             isGrounded = true;
         }
     }

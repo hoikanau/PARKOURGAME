@@ -7,7 +7,15 @@ public class Count : MonoBehaviour
 
    public float count = 0;
     void OnTriggerEnter(Collider other){
-        count++;
-        Debug.Log(count);
+        
+        if(other.tag == "ground"){
+            count = 0;
+            Debug.Log(count);
+        }
+        else{
+            count++;
+            Debug.Log(count);
+        }
+        
     }
 }
