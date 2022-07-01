@@ -8,6 +8,7 @@ public class charMovement : MonoBehaviour{
     public Rigidbody rb;
     public float JumpForce = 10;
     public bool isGrounded = true;
+    public bool doubleJump = false;
     
 
     void Update(){
@@ -36,12 +37,21 @@ public class charMovement : MonoBehaviour{
         {
             rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
             isGrounded = false;
+            doubleJump = true;
+        }
+        else if(Input.GetButtonDown("Jump") && doubleJump){
+            rb.AddForce(new Vector3(0f, (JumpForce * 2), 0f), ForceMode.Impulse);
+            doubleJump = false;
         }
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.tag == "Grass" + "ground"){
+        if(other.tag == "Grass"){
             isGrounded = true;
         }
+        else if(other.tag == "ground"){
+            isGrounded = true;
+        }
+        
     }
 }
