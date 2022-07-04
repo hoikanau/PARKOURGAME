@@ -9,6 +9,10 @@ public class Count : MonoBehaviour
     void OnTriggerEnter(Collider other){
         
         if(other.tag == "ground"){
+            if (count >= 1)
+            {
+               FindObjectOfType<soundManager>().Play("miss"); 
+            }
             count = 0;
             Debug.Log(count);
         }

@@ -9,6 +9,13 @@ public class charMovement : MonoBehaviour{
     public float JumpForce = 10;
     public bool isGrounded = true;
     public bool doubleJump = false;
+    Lights lighting;
+    public GameObject beamLight;
+    
+    void Awake()
+    {
+        lighting = beamLight.GetComponent<Lights>();
+    }
     
 
     void Update(){
@@ -37,21 +44,29 @@ public class charMovement : MonoBehaviour{
         {
             rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
             isGrounded = false;
+            FindObjectOfType<soundManager>().Play("jump");
             doubleJump = true;
         }
         else if(Input.GetButtonDown("Jump") && doubleJump){
-            rb.AddForce(new Vector3(0f, (JumpForce * 2), 0f), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
+            FindObjectOfType<soundManager>().Play("doubleJump");
             doubleJump = false;
         }
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.tag == "Grass"){
+        if(other.tag == "goodGrass"){
             isGrounded = true;
+            lighting.lightsOn(true);
         }
         else if(other.tag == "ground"){
             isGrounded = true;
+            lighting.lightsOn(false);
         }
-        
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        lighting.lightsOn(false);
     }
 }
