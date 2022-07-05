@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 1410423965}
   - component: {fileID: 1410423964}
   - component: {fileID: 1410423963}
+  - component: {fileID: 1410423967}
   m_Layer: 0
   m_Name: Send
   m_TagString: sender
@@ -520,6 +521,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1410423967
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410423962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &1519879735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379274466991374794, guid: 15181d68b3ba22442bd82dcedd1f2ada, type: 3}
