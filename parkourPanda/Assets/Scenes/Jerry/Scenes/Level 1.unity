@@ -1844,12 +1844,12 @@ MonoBehaviour:
     Audio: {fileID: 0}
   - name: jump
     clip: {fileID: 8300000, guid: 31f04c5668238ac4899fd4d0062c28bf, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     Audio: {fileID: 0}
   - name: doubleJump
     clip: {fileID: 8300000, guid: cd98285eb39caf04aa4e69c09d47be6e, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     Audio: {fileID: 0}
   - name: walk
@@ -1866,6 +1866,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 00ab2f8862e3dcf4b9ca09a7f5617582, type: 3}
     volume: 0.2
     pitch: 0.69
+    Audio: {fileID: 0}
+  - name: grassSound
+    clip: {fileID: 8300000, guid: 926466c2527f24a80a580a822ecf1215, type: 3}
+    volume: 1
+    pitch: 1
     Audio: {fileID: 0}
 --- !u!4 &1490380645
 Transform:

@@ -56,23 +56,32 @@ public class charMovement : MonoBehaviour{
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "goodGrass"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
         else if(other.tag == "ground"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(false);
         }
         else if(other.tag == "killGrass"){
-            isGrounded = true;
+            doubleJump = false;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
         else if(other.tag == "sender"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
         else if(other.tag == "receiver"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
     }
@@ -81,4 +90,6 @@ public class charMovement : MonoBehaviour{
     {
         lighting.lightsOn(false);
     }
+    
+
 }
