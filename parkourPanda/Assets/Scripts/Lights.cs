@@ -30,7 +30,7 @@ public class Lights : MonoBehaviour
     {
         if (other == true)
         {
-            beamOn.intensity = 1f;
+            beamOn.intensity = 2f;
         }
         else if (other == false)
         {

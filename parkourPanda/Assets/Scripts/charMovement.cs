@@ -63,6 +63,18 @@ public class charMovement : MonoBehaviour{
             isGrounded = true;
             lighting.lightsOn(false);
         }
+        else if(other.tag == "killGrass"){
+            isGrounded = true;
+            lighting.lightsOn(true);
+        }
+        else if(other.tag == "sender"){
+            isGrounded = true;
+            lighting.lightsOn(true);
+        }
+        else if(other.tag == "receiver"){
+            isGrounded = true;
+            lighting.lightsOn(true);
+        }
     }
     
     void OnTriggerExit(Collider other)
