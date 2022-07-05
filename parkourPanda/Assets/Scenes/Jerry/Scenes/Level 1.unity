@@ -1017,6 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838309416}
   - component: {fileID: 838309415}
+  - component: {fileID: 838309417}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1101,6 +1102,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.601, y: 29.751, z: 20.384}
+--- !u!114 &838309417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838309414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &969336790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6817799022879110916, guid: 300a07d3bde2c44a8b2fecdcebcbfef6, type: 3}
@@ -1435,6 +1456,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9b8fae99e06ff0c41913811c341421c9, type: 3}
     volume: 0.2
     pitch: 1
+    Audio: {fileID: 0}
+  - name: bgm
+    clip: {fileID: 8300000, guid: 00ab2f8862e3dcf4b9ca09a7f5617582, type: 3}
+    volume: 0.2
+    pitch: 0.69
     Audio: {fileID: 0}
 --- !u!4 &1490380645
 Transform:
@@ -1928,5 +1954,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1379274466991374799, guid: 15181d68b3ba22442bd82dcedd1f2ada, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 633f5344fc8e14a5abb53414fcd482fc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15181d68b3ba22442bd82dcedd1f2ada, type: 3}

@@ -17,6 +17,7 @@ public class soundManager : MonoBehaviour
             s.Audio.volume = s.volume;
             s.Audio.pitch = s.pitch;
         }
+        Play("bgm");
     }
     public void Play(string name)
     {
