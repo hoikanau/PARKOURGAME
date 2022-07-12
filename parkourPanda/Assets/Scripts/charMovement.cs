@@ -11,10 +11,13 @@ public class charMovement : MonoBehaviour{
     public bool doubleJump = false;
     Lights lighting;
     public GameObject beamLight;
+    public GameObject particleEffects;
+    public ParticleSystem particle;
     
     void Awake()
     {
         lighting = beamLight.GetComponent<Lights>();
+        particle = particleEffects.GetComponent<ParticleSystem>();
     }
     
 
@@ -46,11 +49,14 @@ public class charMovement : MonoBehaviour{
             isGrounded = false;
             FindObjectOfType<soundManager>().Play("jump");
             doubleJump = true;
+            particle.Emit(1);
+            particle.Play();
         }
         else if(Input.GetButtonDown("Jump") && doubleJump){
             rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
             FindObjectOfType<soundManager>().Play("doubleJump");
             doubleJump = false;
+            particle.Stop();
         }
     }
 
