@@ -11,6 +11,12 @@ public class charMovement : MonoBehaviour{
     public bool doubleJump = false;
     Lights lighting;
     public GameObject beamLight;
+    public GameObject particle_effects; 
+    public ParticleSystem particles; 
+    
+    public void Start(){
+        particles = particle_effects.GetComponent<ParticleSystem>();
+    }
     
     void Awake()
     {
@@ -46,6 +52,8 @@ public class charMovement : MonoBehaviour{
             isGrounded = false;
             FindObjectOfType<soundManager>().Play("jump");
             doubleJump = true;
+            particles.Emit(1);
+            particles.Play();
         }
         else if(Input.GetButtonDown("Jump") && doubleJump){
             rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
@@ -58,10 +66,12 @@ public class charMovement : MonoBehaviour{
         if(other.tag == "goodGrass"){
             isGrounded = true;
             lighting.lightsOn(true);
+            particles.Stop();
         }
         else if(other.tag == "ground"){
             isGrounded = true;
             lighting.lightsOn(false);
+            particles.Stop();
         }
     }
     
