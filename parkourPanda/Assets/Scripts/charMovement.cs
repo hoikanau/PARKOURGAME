@@ -11,8 +11,17 @@ public class charMovement : MonoBehaviour{
     public bool doubleJump = false;
     Lights lighting;
     public GameObject beamLight;
+<<<<<<< HEAD
     public GameObject particleEffects;
     public ParticleSystem particle;
+=======
+    public GameObject particle_effects; 
+    public ParticleSystem particles; 
+    
+    public void Start(){
+        particles = particle_effects.GetComponent<ParticleSystem>();
+    }
+>>>>>>> 77c5d6aba46dabd9f3f44dea8874310dec4e6ab6
     
     void Awake()
     {
@@ -49,14 +58,27 @@ public class charMovement : MonoBehaviour{
             isGrounded = false;
             FindObjectOfType<soundManager>().Play("jump");
             doubleJump = true;
+<<<<<<< HEAD
             particle.Emit(1);
             particle.Play();
+=======
+            particles.Emit(1);
+            particles.Play();
+>>>>>>> 77c5d6aba46dabd9f3f44dea8874310dec4e6ab6
         }
         else if(Input.GetButtonDown("Jump") && doubleJump){
             rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
             FindObjectOfType<soundManager>().Play("doubleJump");
             doubleJump = false;
+<<<<<<< HEAD
             particle.Stop();
+=======
+            particles.Emit(1);
+            particles.Play();
+        }
+        else{
+            particles.Stop();
+>>>>>>> 77c5d6aba46dabd9f3f44dea8874310dec4e6ab6
         }
     }
 

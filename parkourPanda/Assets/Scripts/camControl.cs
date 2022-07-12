@@ -9,11 +9,19 @@ public class camControl : MonoBehaviour
     public float RotationSpeed;
     float mouseX, mouseY;
     public float YLock1, YLock2;
+    public GameObject WinScreen;
+
     void Update()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        CamControl();
+        if(WinScreen.activeSelf == true){
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else{
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            CamControl();
+        }
     }
 
     void CamControl(){
