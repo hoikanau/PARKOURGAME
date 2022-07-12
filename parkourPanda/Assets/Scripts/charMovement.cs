@@ -59,6 +59,11 @@ public class charMovement : MonoBehaviour{
             rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
             FindObjectOfType<soundManager>().Play("doubleJump");
             doubleJump = false;
+            particles.Emit(1);
+            particles.Play();
+        }
+        else{
+            particles.Stop();
         }
     }
 
@@ -68,14 +73,12 @@ public class charMovement : MonoBehaviour{
             isGrounded = true;
             FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
-            particles.Stop();
         }
         else if(other.tag == "ground"){
 
             isGrounded = true;
             FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(false);
-            particles.Stop();
         }
         else if(other.tag == "killGrass"){
             doubleJump = false;
