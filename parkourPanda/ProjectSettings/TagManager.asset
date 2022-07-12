@@ -7,6 +7,9 @@ TagManager:
   - goodGrass
   - ground
   - lightings
+  - killGrass
+  - sender
+  - receiver
   layers:
   - Default
   - TransparentFX

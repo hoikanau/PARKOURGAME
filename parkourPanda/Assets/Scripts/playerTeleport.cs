@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class playerTeleport : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "sender")
+        {
+            gameObject.transform.position = new Vector3(6.487917f, 3.5f,-4.951911f);
+        }
+    }
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(transform.position.y < -1)
         {
-            gameObject.transform.position = new Vector3(6.487917f, 4f,-4.951911f);
+            gameObject.transform.position = new Vector3(8.508388f,2.48f,-0.6940349f);
         }
     }
 }
