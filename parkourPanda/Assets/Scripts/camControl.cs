@@ -10,7 +10,6 @@ public class camControl : MonoBehaviour
     float mouseX, mouseY;
     public float YLock1, YLock2;
     public GameObject WinScreen;
-
     void Update()
     {
         if(WinScreen.activeSelf == true){
