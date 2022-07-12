@@ -11,6 +11,12 @@ public class charMovement : MonoBehaviour{
     public bool doubleJump = false;
     Lights lighting;
     public GameObject beamLight;
+    public GameObject particle_effects; 
+    public ParticleSystem particles; 
+    
+    public void Start(){
+        particles = particle_effects.GetComponent<ParticleSystem>();
+    }
     
     void Awake()
     {
@@ -46,33 +52,49 @@ public class charMovement : MonoBehaviour{
             isGrounded = false;
             FindObjectOfType<soundManager>().Play("jump");
             doubleJump = true;
+            particles.Emit(1);
+            particles.Play();
         }
         else if(Input.GetButtonDown("Jump") && doubleJump){
             rb.AddForce(new Vector3(0f, JumpForce, 0f), ForceMode.Impulse);
             FindObjectOfType<soundManager>().Play("doubleJump");
             doubleJump = false;
+            particles.Emit(1);
+            particles.Play();
+        }
+        else{
+            particles.Stop();
         }
     }
 
     void OnTriggerEnter(Collider other){
         if(other.tag == "goodGrass"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
         else if(other.tag == "ground"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(false);
         }
         else if(other.tag == "killGrass"){
-            isGrounded = true;
+            doubleJump = false;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
         else if(other.tag == "sender"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
         else if(other.tag == "receiver"){
+
             isGrounded = true;
+            FindObjectOfType<soundManager>().Play("grassSound");
             lighting.lightsOn(true);
         }
     }
@@ -81,4 +103,6 @@ public class charMovement : MonoBehaviour{
     {
         lighting.lightsOn(false);
     }
+    
+
 }
