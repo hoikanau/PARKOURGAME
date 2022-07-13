@@ -7,6 +7,7 @@ public class winActivate : MonoBehaviour
     public GameObject WinScreen;
     
     void OnTriggerEnter(Collider other){
+        Destroy(gameObject);
         WinScreen.SetActive(true);
     }
 }
